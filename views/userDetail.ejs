@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--HEAD-->
+<%- include('partials/head')  %>
+
+    <body>
+        <!--HEADER-->
+        <%- include('partials/header')  %>
+
+            <main>
+                <section class="mainCards">
+
+                    <article class="descriptionCard">
+
+                        <div class="descriptionCard-content">
+
+                            <h3>Nombre:
+                                <%- User.first_name %>
+                            </h2>
+                            <h3>Apellido: 
+                                <%- User.last_name %>
+                            </h3>
+                            <p>
+                                <%- User.password %>
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="cartCard">
+                        <div class="cartCard-content">
+
+                           
+                             
+                                    <button type="submit" class="buttonDetail delete">Eliminar usuario</button>
+                                </form>
+                               
+                        </div>
+                    </article>
+                </section>
+
+            </main>
+
+            <!--FOOTER-->
+            <%- include('partials/footer')  %>
+
+
+
+    </body>
+
+</html>

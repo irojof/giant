@@ -1,0 +1,76 @@
+<% if (isAuthenticated) { %>
+    <header>
+        <div class="top-header">
+            <div class="logo">
+                <a href="/"><img src="/images/gm-white.png" alt="logo GiantsMarket"></a>
+            </div>
+            <div class="form" action="#" method="POST">
+                <div class="form">
+                    <input type="text" placeholder="Buscar en Giants Market">
+                </div>
+            </div>
+            <a href="/productCart"><i class="fas fa-shopping-cart fa-2x"></i></a>
+            <% if(typeof data != 'undefined') {%>
+                <p>Hola!
+                    <%=data.email %>
+                </p>
+                <%  } %>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Gift cards</a></li>
+                <li><a href="/create">Vender</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+            <ul>
+                <li><a href="/userDetail/<%= User.id %>">Editar Usuario</a></li>
+                <li><a href="#">Mis compras</a></li>
+                <li><a href="#">Salir</a></li>
+    
+            </ul>
+        </nav>
+    </header>
+    
+<% } else { %>
+    <header>
+    <div class="top-header">
+        <div class="logo">
+            <a href="/"><img src="/images/gm-white.png" alt="logo GiantsMarket"></a>
+        </div>
+        <div class="form" action="#" method="POST">
+            <div class="form">
+                <input type="text" placeholder="Buscar en Giants Market">
+            </div>
+        </div>
+        <a href="/productCart"><i class="fas fa-shopping-cart fa-2x"></i></a>
+        <% if(typeof data != 'undefined') {%>
+            <p>Hola!
+                <%=data.email %>
+            </p>
+            <%  } %>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">Categorias</a></li>
+            <li><a href="#">Gift cards</a></li>
+            <li><a href="#">Ayuda</a></li>
+        </ul>
+        <ul>
+            <!-- PRUEBA, SE DEBE BORRAR -->
+            
+            <!-- PRUEBA, SE DEBE BORRAR -->
+
+            <% if(typeof user.id != 'undefined') {%>
+                <li><a href="/userDetail/<%=user.id %>">Editar Usuario</a></li>
+                    
+                <%  } %>
+
+            
+            <li><a href="/register">Crea tu cuenta</a></li>
+            <li><a href="/login">Ingresa</a></li>
+
+        </ul>
+    </nav>
+</header>
+<% } %>

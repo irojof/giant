@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--HEAD-->
+<%- include('partials/head')  %>
+
+    <body>
+        <!--HEADER-->
+        <%- include('partials/header')  %>
+            <form action="/<%= User.id %>" method="POST" class="cont-form" enctype="multipart/form-data">
+
+                <div class="p-form">
+                    <h1>Editar usuario</h1>
+                    <div class="igroup">
+                        <input type="text" name="first_name" id="first_name" value="<%= User.first_name %>"><span class="ibar"></span>
+                        <label for="first_name">Nombre</label>
+                    </div>
+
+                    <div class="igroup">
+                        <input type="text" name="last_name" id="last_name" value="<%= User.last_name %>"><span class="ibar"></span>
+                        <label for="last_name">Apellido</label>
+                    </div>
+
+                    <div class="igroup">
+                        <input type="password" name="password" id="password" minlength="8" maxlength="10" value="<%= User.password %>"><span class="ibar"></span>
+                        <label for="password">Contraseña</label>
+                    </div>
+
+                   
+
+                    <button type="submit" class="button">Guardar cambios</button>
+                </div>
+            </form>
+            <!--FOOTER-->
+            <%- include('partials/footer')  %>
+    </body>
+
+</html>
